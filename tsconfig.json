@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES2022",
+    "target": "es2022",
     "module": "commonjs",
     "strict": true,
     "declaration": true,
@@ -17,8 +17,7 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false,
-    "jsx": "react"
+    "noFallthroughCasesInSwitch": false
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]
