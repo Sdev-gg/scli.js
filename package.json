@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "An official package to init sdev projects. ",
   "main": "dist/index.js",
+  "type": "module",
   "scripts": {
     "build:watch": "concurrently \"pnpm run format\" \"tsc --watch\"",
     "build": "concurrently \"pnpm run format\" \"tsc\"",
@@ -11,7 +12,7 @@
     "start:dev": "concurrently \"pnpm run build\" \" nodemon .\""
   },
   "bin": {
-    "sdev": "node ."
+    "scli": "node ."
   },
   "keywords": [],
   "author": "Sdev",
@@ -20,6 +21,7 @@
     "chalk": "4",
     "exec-sh": "^0.4.0",
     "figlet": "^1.5.2",
+    "fs-extra": "^11.1.0",
     "inquirer": "8",
     "nanospinner": "^1.1.0"
   },

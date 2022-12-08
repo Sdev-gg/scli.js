@@ -13,17 +13,31 @@
 
 // MODULES
 import chalk from 'chalk';
-import inquirer from 'inquirer';
 import fs from 'fs';
 import exec from 'exec-sh';
 import { createSpinner } from 'nanospinner';
+import Generation from './interfaces/generation.interface';
+
 // FUNCTIONS
-import packageManagerSelector from './selectors/packagemanager.selector';
+import packageManagerSelector from './selectors/packagemanager.selector.js';
+import frameworkSelector from './selectors/framework.selector.js';
+import FolderSelector from './selectors/folder.selector.js';
+import GenerateProject from './configs/gen.js';
 
 // VARIABLES
-var packageManager: 'npm' | 'yarn' | 'pnpm' = 'pnpm';
-const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+var generation: Generation = {
+  packageManager: 'pnpm',
+  framework: 'next',
+  folder: '.',
+};
 
 (async () => {
-  packageManager = await packageManagerSelector();
+  console.clear();
+  generation.packageManager = await packageManagerSelector();
+  console.clear();
+  generation.framework = await frameworkSelector();
+  console.clear();
+  generation.folder = await FolderSelector();
+  console.clear();
+  await GenerateProject(generation);
 })();

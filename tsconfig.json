@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es2022",
-    "module": "commonjs",
+    "module": "ESNext",
     "strict": true,
     "declaration": true,
     "removeComments": true,
@@ -12,6 +12,7 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true,
+    "moduleResolution": "node",
     "skipLibCheck": true,
     "strictNullChecks": false,
     "noImplicitAny": false,
